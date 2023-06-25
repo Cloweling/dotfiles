@@ -1,0 +1,14 @@
+[/]
+alphabetize=true
+battery-slot=3
+fixed-widths=true
+hide-icons=false
+hide-zeros=true
+hot-sensors=['_memory_usage_', '__temperature_avg__', '_processor_usage_']
+show-battery=false
+show-fan=false
+show-network=true
+show-storage=false
+show-system=false
+show-voltage=false
+use-higher-precision=false

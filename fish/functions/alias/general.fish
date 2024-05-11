@@ -65,3 +65,25 @@ end
 function syslls
     systemctl list-unit-files --type=service
 end
+
+function reload
+    source ~/.config/fish/config.fish
+end
+
+function working
+    set found 0
+
+    for layout in $zellij_layout_commands_global
+        if test $argv[1] = $layout
+            set found 1
+            break
+        end
+    end
+
+    if test $found -eq 0
+        echo "Invalid argument. Please provide a valid layout"
+        return 1
+    end
+
+    zellij --layout $argv[1]
+end

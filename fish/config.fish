@@ -16,10 +16,12 @@ source "$HOME/.config/fish/conf.d/export.fish"
 
 # Function
 source "$HOME/.config/fish/functions/helper.fish"
+source "$HOME/.config/fish/functions/jenv.fish"
 
 # alias
 source "$HOME/.config/fish/functions/alias/general.fish"
 source "$HOME/.config/fish/functions/alias/directory.fish"
+source "$HOME/.config/fish/functions/alias/git.fish"
 
 # Completions
 source "$HOME/.config/fish/completions/vsc.fish"
@@ -29,7 +31,7 @@ source "$HOME/.config/fish/completions/zellij.fish"
 [ -s "$HOME/.alias.local" ] && source "$HOME/.alias.local"
 [ -s "$HOME/.fish.local" ] && source "$HOME/.fish.local"
 [ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm"
-[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ] && fish_add_path (find $HOME/.sdkman/candidates/*/current/bin -maxdepth 0)
+
 
 # Load
 if type -q fnm
@@ -45,4 +47,4 @@ if status is-interactive
     # eval (zellij setup --generate-auto-start fish | string collect)
 end
 
-
+source (jenv init - | string replace 'hash' 'command -v' | psub)

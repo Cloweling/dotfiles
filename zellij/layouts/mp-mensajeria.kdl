@@ -29,20 +29,12 @@ layout {
         }
         children
     }
-    tab name="/" focus=true cwd="~/Dev/Tio-gt/simplifypi/casetracker-new" split_direction="vertical" {
-        pane focus=true
-        pane command="docker"{
-            args "compose" "up" "-d"
-            close_on_exit true
-        }
+    tab name="BE" cwd="~/Dev/MP/js/mensajeria/be" focus=true split_direction="vertical" {
+        pane name="run"
+        pane name="shell"
     }
-    tab name="FE" cwd="~/Dev/Tio-gt/simplifypi/casetracker-new/case-tracker-web-service" {
-        pane
-    }
-    tab name="Reload" cwd="~/Dev/Tio-gt/simplifypi/casetracker-new/case-tracker-web-service" {
-        pane
-    }
-    tab name="DB" cwd="~/Dev/Tio-gt/simplifypi/casetracker-new/case-tracker-database" {
-        pane
+    tab name="FE" cwd="~/Dev/MP/js/mensajeria/fe" split_direction="vertical" {
+        pane name="run"
+        pane name="shell"
     }
 }

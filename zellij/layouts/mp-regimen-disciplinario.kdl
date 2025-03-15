@@ -1,14 +1,35 @@
-mouse_mode true
+mouse_mode false
 pane_frames true
+
+
 layout {
     default_tab_template {
         pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode}#[fg=white,bold] {tabs}"
+                format_right  "#[bold] {session} "
+                format_space  ""
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#6C7086]"
+                border_position "top"
+
+                hide_frame_for_single_pane "true"
+
+                mode_normal "#[bg=green,fg=#fff,bold] NORMAL "
+                mode_locked "#[bg=red,fg=#ffffff,bold] LOCKED "
+                mode_tab "#[bg=magenta,fg=#ffffff,bold] TAB "
+                mode_pane "#[bg=magenta,fg=#ffffff,bold] PANE "
+                mode_scroll "#[bg=cyan,fg=#ffffff,bold] SEARCH "
+                mode_resize "#[bg=magenta,fg=#ffffff,bold] RESIZE "
+                mode_session "#[bg=red,fg=#ffffff,bold] SESSION "
+
+                tab_normal   "#[fg=white] {index}::{name} "
+                tab_active   "#[bg=blue,fg=#ffffff,bold] {index}::{name} "
+            }
         }
         children
-        pane size=2 borderless=true {
-            plugin location="zellij:status-bar"
-        }
     }
     tab name="BE" cwd="~/Dev/MP/js/regimen-disciplinario/be" focus=true split_direction="vertical" {
         pane name="run"

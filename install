@@ -1,8 +1,0 @@
-#! /bin/bash
-
-# import functions
-source ./functions/utils
-
-# check if root
-connect_root
-

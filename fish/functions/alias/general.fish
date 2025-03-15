@@ -31,15 +31,15 @@ function wget
 end
 
 function mv
-    mv -i $argv
+    command mv -i $argv
 end
 
 function cp
-    cp -i $argv
+    command cp -i $argv
 end
 
 function ln
-    ln -i $argv
+    command ln -i $argv
 end
 
 function dfll
@@ -86,4 +86,5 @@ function working
     end
 
     zellij --layout $argv[1]
+    # zellij --layout $argv[1] -s $argv[1]
 end
